@@ -1,0 +1,183 @@
+* {
+  box-sizing:border-box;
+}
+
+header,footer,article,aside {
+  display:block;
+}
+
+body,input,button,article,aside,form,form ol,form li {
+  margin:0;
+  padding:0;
+}
+
+form ol {
+  list-style:none;
+  margin-bottom:1rem;
+}
+
+input:focus {
+  outline:none;
+}
+
+body {
+  color:#444;
+  background:#fff;
+}
+
+body,input,button,h1 {
+  font-family: Bariol, 'Avenir Next' Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.small-font {
+  font-size:0.875rem;
+}
+
+form .small-font {
+  color:rgba(255,255,255,0.3);
+}
+
+.inner {
+  width:90%;
+  max-width:700px;
+  margin:0 auto;
+}
+
+header {
+  padding: 2rem 0;
+}
+
+h1 {
+  text-transform:uppercase;
+  font-size:3rem;
+  color:#618d04;
+}
+
+h1 span {
+  font-weight:200;
+  color:#444;
+}
+
+form {
+  background:#618d04;
+  color:#fff;
+  padding:2rem 0;
+}
+
+footer {
+  color: #999;
+}
+
+a {
+  color:rgba(97,141,4,0.75);
+  border-bottom: 1px solid rgba(97,141,4,0);
+  text-decoration:none;
+  transition:all 0.2s ease;
+}
+a:hover {
+  color:rgba(97,141,4,1);
+  border-bottom: 1px solid rgba(97,141,4,0.5);
+}
+
+label {
+  color:rgba(255,255,255,0.5);
+  text-transform:uppercase;
+  font-size:0.875rem;
+  display:block;
+}
+
+input, button {
+  appearance:none;
+  display:inline-block;
+  width:100%;
+  border-radius: 2px;
+  border:2px solid #fff;
+  background:#fff;
+  margin:0.5rem 0;
+  padding: 0.5rem;
+  vertical-align:top;
+  outline:none;
+}
+
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background:transparent;
+  color: #fff;
+  font-size: 1rem;
+  font-weight:600;
+  text-transform: uppercase;
+  text-align:center;
+  line-height:1.5;
+  letter-spacing: .15rem;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: yellow;
+  border-color: yellow;
+  color: #333;
+}
+
+input {
+  font-size:1.5rem;
+}
+
+form ol {
+  display:-webkit-flex;
+  display:flex;
+}
+form li:nth-of-type(1) {
+  -webkit-flex: 1;
+  flex: 1;
+  padding-right:2rem;
+}
+form li:nth-of-type(2) {
+  width:5em;
+}
+
+aside {
+  display:none;
+}
+
+@media screen and (min-width: 30rem) {
+  .inner {
+    width:80%;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  body,html {height:100%;}
+  body {
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex-direction:row-reverse;
+    -webit-align-items:stretch
+  }
+  article {
+    background-color:#618d04;
+    color: #fff;
+    -webkit-flex:1;
+  }
+  aside {
+    display:block;
+    width:26rem;
+    background: #fff url(images/iphone.png) center center no-repeat;
+    background-size: 64%;
+  }
+  h1,footer {
+    color:rgba(255,255,255,0.65);
+  }
+  a {
+    color:rgba(255,255,255,0.65);
+    border-color:rgba(255,255,255,0.15);
+  }
+  a:hover {
+    color:rgba(255,255,255,1);
+    border-color:rgba(255,255,255,0.5);
+  }
+}

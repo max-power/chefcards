@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="chefcard.css" type="text/css">
+  <title>Chefcards: Rezeptkarten zum Teilen.</title>
+</head>
+<body>
+  
+  <article>
+    <header>
+      <div class="inner">
+        <h1>Chef<span>cards</span></h1>
+        <p>Einfache Rezeptkarten zum Teilen. Als Passbook Pass.</p>
+      </div>
+    </header>
+
+    <form action="/" method="post">
+      <div class="inner">
+        <ol>
+          <li>
+            <label for="recipe_id">Chefkoch Rezept-ID/URL</label>
+            <input type="text" name="id" id="recipe_id" value="716331174378295">
+          </li>
+          <li>
+            <label for="servings">Portionen</label>
+            <input type="number" name="p" id="recipe_servings" value="2" min="1" max="20">
+          </li>
+          <!--li>
+            <label for="servings">Pass-Typ</label>
+            <select name="t">
+              <option value="generic" selected>Allgemein</option>
+              <option value="coupon">Coupon</option>
+              <option value="storeCard">Store card</option>
+              <option value="eventTicket">Event Ticket</option>
+              <option value="boardingPass">Boarding Pass</option>
+            </select>
+          </li-->
+        </ol>
+        <button type="submit">Chefcard erstellen</button>
+      </div>
+    </form>
+
+    <footer>
+      <div class="inner">
+        <p  class="small-font" id="try">
+          Probiere:
+          <a href="http://www.chefkoch.de/rezepte/716331174378295/Italienischer-Pizzateig.html">Italienischer Pizzateig</a>,
+          <a href="http://www.chefkoch.de/rezepte/67221024828068/Moehren-Lasagne.html">Möhren-Lasagne</a>,
+          <a href="http://www.chefkoch.de/rezepte/2305501367922005/Cr-pes-auf-mediterrane-Art.html">Crêpes auf mediterrane Art</a>.
+        </p>
+      </div>
+    </footer>
+  </article>
+  
+  <aside>
+
+  </aside>
+
+  <script>
+      var onlyDigits  = function(str) { return str.replace(/\D/g,'') }
+      var clearValue  = function(e) { this.value = onlyDigits(this.value) };
+      var selectValue = function(e) { this.select() };
+      
+      [].forEach.call(document.getElementsByTagName('input'), function(input) {
+          input.addEventListener('input',  clearValue)
+          input.addEventListener('change', clearValue)
+          input.addEventListener('click',  selectValue)
+      });
+      
+      document.getElementById('try').addEventListener('click', function(e) {
+          if (e.target && e.target.tagName == "A") {
+              e.preventDefault()
+              document.getElementById('recipe_id').value = onlyDigits(e.target.href)
+          }
+      })
+  </script>
+
+</body>
+</html>
