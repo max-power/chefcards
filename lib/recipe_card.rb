@@ -105,6 +105,12 @@ module Chefcard
         f << { key: 'votes',        label: "Bewertung #{@recipe.stars}", value: @recipe.voting_sentence }
         f << { key: 'user_name',    label: 'Verfasser',   value: @recipe.user_name,    attributedValue: @recipe.user_link }
         f << { key: 'frontend_url', label: 'URL',         value: @recipe.chefkoch_url, attributedValue: @recipe.chefkoch_link }
+        f << {
+          key: 'chefcard_url',
+          label: 'CHEFCARDS',
+          value: 'Erstelle eigene Chefcards auf http://chefcards.herokuapp.com',
+          attributedValue: %Q[<a href="http://chefcards.herokuapp.com">Erstelle eigene Chefcards!</a>]
+        }
       end
     end
     
