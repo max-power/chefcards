@@ -21,12 +21,15 @@ module Chefcard
       send_file File.join(settings.public_folder, 'index.html')
     end
     
+    get '/:id.pkpass' do
+    end
+    
     post '/' do
       begin
         recipe = Chefkoch.recipe(params[:id], divisor: params[:p])
         pass   = Chefcard::RecipeCard.new(recipe, (params[:t] || :generic).to_sym)
-        pkpass = Passbook::PKPass.new(pass.specs, pass.assets, settings.pass_config)
-  
+        pkpass = Passbook::PKPass.new(pass.specs.merge(settings.pass_config), pass.assets)
+        
         content_type pkpass.content_type
         body pkpass.to_s
       rescue Chefkoch::RecipeNotFound
