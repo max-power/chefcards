@@ -19,7 +19,7 @@ module Chefcard
     }
 
     get '/' do
-      send_file File.join(settings.public_folder, 'index.html')
+      send_file settings.public_folder + 'index.html'
     end
     
     # get '/:id.pkpass' do
@@ -39,11 +39,11 @@ module Chefcard
     end
     
     not_found do
-      send_file File.join(settings.public_folder, '404.html')
+      send_file settings.public_folder + '404.html'
     end
     
     error do
-      send_file File.join(settings.public_folder, '500.html')
+      send_file settings.public_folder + '500.html'
     end
   end
 end
