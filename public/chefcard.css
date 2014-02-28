@@ -1,18 +1,18 @@
 @font-face {
   font-family: Bariol;
-  src: url("fonts/Bariol_Regular.otf");
+  src: url("fonts/Bariol_Regular.woff") format("woff"), url("fonts/Bariol_Regular.otf") format("opentype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: Bariol;
-  src: url("fonts/Bariol_Light.otf");
+  src: url("fonts/Bariol_Light.woff") format("woff"), url("fonts/Bariol_Light.otf") format("opentype");
   font-weight: 200;
 }
 
 @font-face {
   font-family: Bariol;
-  src: url("fonts/Bariol_Bold.otf");
+  src: url("fonts/Bariol_Bold.woff") format("woff"), url("fonts/Bariol_Bold.otf") format("opentype");
   font-weight: 600;
 }
 
@@ -84,7 +84,7 @@ body,
 input,
 button,
 h1 {
-  font-family: Bariol, 'Avenir Next' Avenir, Helvetica, Arial, sans-serif;
+  font-family: Bariol, 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1;
 }
