@@ -1,4 +1,4 @@
-require 'dotenv/tasks'
+require 'dotenv/tasks' if ENV["RACK_ENV"] == "development"
 
 desc "Run console"
 task :console do
