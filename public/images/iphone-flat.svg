@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="770px" height="1600px" viewBox="0 0 770 1600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Minimal-iPhone-Flat</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feMorphology radius="3" in="SourceAlpha" operator="dilate" result="shadowSpreadInner1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadInner1" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.954853318   0 0 0 0 0.95749628   0 0 0 0 0.941638511  0 0 0 0.7 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <rect id="background" fill="#FFFFFF" sketch:type="MSShapeGroup" x="-115" y="-102" width="1000" height="1800"></rect>
+        <g id="iPhone" sketch:type="MSLayerGroup" transform="translate(7.000000, 4.000000)">
+            <rect id="left-button3" fill="#D9D8D0" sketch:type="MSShapeGroup" x="0" y="507" width="29" height="56" rx="4"></rect>
+            <rect id="left-button2" fill="#D9D8D0" sketch:type="MSShapeGroup" x="0" y="376" width="29" height="56" rx="4"></rect>
+            <rect id="left-button1" fill="#D9D8D0" sketch:type="MSShapeGroup" x="0" y="227" width="29" height="70" rx="4"></rect>
+            <rect id="top-button" fill="#D9D8D0" sketch:type="MSShapeGroup" x="508" y="0" width="123" height="20" rx="4"></rect>
+            <rect id="iphone" fill="#E9EAE4" filter="url(#filter-1)" sketch:type="MSShapeGroup" x="10" y="9" width="746" height="1580" rx="110"></rect>
+            <rect id="screen-border" fill="#ABA99F" sketch:type="MSShapeGroup" x="57" y="228" width="652" height="1148" rx="6"></rect>
+            <rect id="screen" fill="#C5C3BA" sketch:type="MSShapeGroup" x="63" y="234" width="640" height="1136"></rect>
+            <circle id="home" fill="#C5C3BA" sketch:type="MSShapeGroup" cx="382" cy="1477" r="72"></circle>
+            <rect id="home-inner" fill="#E9EAE4" sketch:type="MSShapeGroup" x="354" y="1450" width="56" height="55" rx="10"></rect>
+            <circle id="camera" fill="#C5C3BA" sketch:type="MSShapeGroup" cx="383" cy="86" r="15"></circle>
+            <circle id="camera-inner" fill="#ABA99F" sketch:type="MSShapeGroup" cx="383" cy="86" r="6"></circle>
+            <rect id="speaker" fill="#C5C3BA" sketch:type="MSShapeGroup" x="314" y="131" width="136" height="34" rx="20"></rect>
+            <rect id="speaker-inner" fill="#ABA99F" sketch:type="MSShapeGroup" x="321" y="138" width="122" height="20" rx="20"></rect>
+        </g>
+    </g>
+</svg>

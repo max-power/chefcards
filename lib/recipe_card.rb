@@ -46,8 +46,8 @@ module Chefcard
 #        appLaunchURL: '',
         associatedStoreIdentifiers: [Chefkoch::ADAM_ID],
         
-        backgroundColor: "#618d04",
-        foregroundColor: "#ffffff",
+        backgroundColor: "#6b9c04", #"#618d04",
+        foregroundColor: "#EAEBE5", #"#ffffff",
         labelColor:      "rgba(255,255,255,0.5)",
 
         serialNumber:    @recipe.id,
