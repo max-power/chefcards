@@ -3,7 +3,7 @@ if ENV['RACK_ENV'] == 'production'
   use Rack::SSL
 else
   require 'dotenv'
-  Dotenv.load  
+  Dotenv.load
 end
 
 require_relative 'lib/server'

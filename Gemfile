@@ -1,8 +1,8 @@
 ruby "2.1.1"
 source "https://rubygems.org"
 
-gem 'dotenv'
+gem 'dotenv',   group: :development
+gem 'rack-ssl', group: :production
 gem 'sinatra'
 gem 'power-passbook', github: 'max-power/passbook'
 gem 'thin'
-gem 'rack-ssl'
