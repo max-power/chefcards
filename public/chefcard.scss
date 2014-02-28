@@ -1,9 +1,9 @@
 $color: #EAEBE5;
 $green: lighten(#618d04, 3%);
 
-@font-face { font-family: Bariol; src: url('fonts/Bariol_Regular.otf'); font-weight: normal; } 
-@font-face { font-family: Bariol; src: url('fonts/Bariol_Light.otf');   font-weight: light; }
-@font-face { font-family: Bariol; src: url('fonts/Bariol_Bold.otf');    font-weight: bold; }
+@font-face { font-family: Bariol; src: url('fonts/Bariol_Regular.otf'); font-weight: 400; } 
+@font-face { font-family: Bariol; src: url('fonts/Bariol_Light.otf');   font-weight: 200; }
+@font-face { font-family: Bariol; src: url('fonts/Bariol_Bold.otf');    font-weight: 600; }
 
 * {
   box-sizing:border-box;
