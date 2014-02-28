@@ -1,3 +1,21 @@
+@font-face {
+  font-family: Bariol;
+  src: url("fonts/Bariol_Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Bariol;
+  src: url("fonts/Bariol_Light.otf");
+  font-weight: light;
+}
+
+@font-face {
+  font-family: Bariol;
+  src: url("fonts/Bariol_Bold.otf");
+  font-weight: bold;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
