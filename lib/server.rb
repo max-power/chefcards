@@ -6,11 +6,12 @@ require_relative 'recipe_card'
 
 module Chefcard
   class Server < Sinatra::Base
-    Passbook.certificate = Base64.decode64 ENV['CHEFCARD_CERTIFICATE']
-    Passbook.password    = ENV['CHEFCARD_PASSWORD']
-    
     set :public_folder, Pathname.new(__FILE__).dirname.parent + 'public'
 
+    set :pass_signer, Passbook::Authority.new(
+      Base64.decode64(ENV['CHEFCARD_CERTIFICATE']),
+      ENV['CHEFCARD_PASSWORD']
+    )
     set :pass_config, {
       passTypeIdentifier: ENV['CHEFCARD_PASSTYPE_ID'],
       teamIdentifier:     ENV['CHEFCARD_TEAM_ID'],
@@ -21,14 +22,14 @@ module Chefcard
       send_file File.join(settings.public_folder, 'index.html')
     end
     
-    get '/:id.pkpass' do
-    end
+    # get '/:id.pkpass' do
+    # end
     
     post '/' do
       begin
         recipe = Chefkoch.recipe(params[:id], divisor: params[:p])
         pass   = Chefcard::RecipeCard.new(recipe, (params[:t] || :generic).to_sym)
-        pkpass = Passbook::PKPass.new(pass.specs.merge(settings.pass_config), pass.assets)
+        pkpass = Passbook::PKPass.new(pass.specs.merge(settings.pass_config), pass.assets, settings.pass_signer)
         
         content_type pkpass.content_type
         body pkpass.to_s
@@ -38,11 +39,11 @@ module Chefcard
     end
     
     not_found do
-      send_file 'public/404.html'
+      send_file File.join(settings.public_folder, '404.html')
     end
     
     error do
-      send_file 'public/500.html'
+      send_file File.join(settings.public_folder, '500.html')
     end
   end
 end

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/max-power/passbook.git
-  revision: 989b0a4c3b386867d98ef092daa310034776f5f6
+  revision: 39891eb39f1b26bcb399633e76e390c4be07b33e
   specs:
     power-passbook (0.0.1)
       rubyzip (~> 1.1)
