@@ -1,4 +1,4 @@
-if ENV['RACK.ENV'] == 'production'
+if ENV['RACK_ENV'] == 'production'
   require 'rack/ssl'
   use Rack::SSL
 else
