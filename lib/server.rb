@@ -33,7 +33,7 @@ module Chefcard
         
         content_type pkpass.content_type
         body pkpass.to_s
-      rescue Chefkoch::RecipeNotFound
+      rescue
         halt 404
       end
     end
