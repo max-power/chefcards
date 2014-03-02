@@ -17,7 +17,7 @@
       </div>
     </header>
 
-    <form action="/" method="post">
+    <form action="/" method="get">
       <div class="inner">
         <ol>
           <li>
@@ -75,6 +75,10 @@
               e.preventDefault()
               document.getElementById('recipe_id').value = onlyDigits(e.target.href)
           }
+      })
+      
+      document.forms[0].addEventListener('submit', function(){
+        this.action = '/' + document.getElementById('recipe_id').value + '.pkpass'
       })
   </script>
   <script>

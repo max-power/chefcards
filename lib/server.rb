@@ -22,10 +22,7 @@ module Chefcard
       send_file settings.public_folder + 'index.html'
     end
     
-    # get '/:id.pkpass' do
-    # end
-    
-    post '/' do
+    get '/:id.pkpass' do
       begin
         recipe = Chefkoch.recipe(params[:id], divisor: params[:p])
         pass   = Chefcard::RecipeCard.new(recipe, (params[:t] || :generic).to_sym)
