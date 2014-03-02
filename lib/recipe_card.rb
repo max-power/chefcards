@@ -43,7 +43,7 @@ module Chefcard
         # Optional for event tickets and boarding passes; otherwise not allowed.
         # NOTE: this seems to work no matter which type
         groupingIdentifier: "Chefcard",
-#        appLaunchURL: '',
+        appLaunchURL: Chefkoch::AppLaunchURL + @recipe.id,
         associatedStoreIdentifiers: [Chefkoch::ADAM_ID],
         
         backgroundColor: "#6b9c04", #"#618d04",

@@ -5,6 +5,7 @@ module Chefkoch
   ADAM_ID = 478618165
   Host    = 'api.chefkoch.de'
   Path    = '/api/1.2/api-recipe.php'
+  AppLaunchURL = 'chefkoch://www.chefkoch.de/rezepte/'
   
   class RecipeNotFound < StandardError; end
   
