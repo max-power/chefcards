@@ -64,21 +64,22 @@
       var clearValue  = function(e) { this.value = onlyDigits(this.value) };
       var selectValue = function(e) { this.select() };
       
-      [].forEach.call(document.getElementsByTagName('input'), function(input) {
-          input.addEventListener('input',  clearValue)
-          input.addEventListener('change', clearValue)
-          input.addEventListener('click',  selectValue)
-      });
-      
-      document.getElementById('try').addEventListener('click', function(e) {
-          if (e.target && e.target.tagName == "A") {
-              e.preventDefault()
-              document.getElementById('recipe_id').value = onlyDigits(e.target.href)
-          }
-      })
+      var inputs = document.getElementsByTagName('input')
+      for(var i in inputs) {
+        inputs[i].addEventListener('input',  clearValue)
+        inputs[i].addEventListener('change', clearValue)
+        inputs[i].addEventListener('click',  selectValue)
+      }
       
       document.forms[0].addEventListener('submit', function(){
         this.action = '/' + document.getElementById('recipe_id').value + '.pkpass'
+      })
+      
+      document.getElementById('try').addEventListener('click', function(e) {
+        if (e.target && e.target.tagName == "A") {
+          e.preventDefault()
+          document.getElementById('recipe_id').value = onlyDigits(e.target.href)
+        }
       })
   </script>
   <script>
