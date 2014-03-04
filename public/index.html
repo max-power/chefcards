@@ -65,7 +65,7 @@
       var selectValue = function(e) { this.select() };
       
       var inputs = document.getElementsByTagName('input')
-      for(var i in inputs) {
+      for(var i=0;i<inputs.length;i++) {
         inputs[i].addEventListener('input',  clearValue)
         inputs[i].addEventListener('change', clearValue)
         inputs[i].addEventListener('click',  selectValue)
