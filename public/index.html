@@ -60,34 +60,38 @@
   </aside>
 
   <script>
-      var onlyDigits  = function(str) { return str.replace(/\D/g,'') }
-      var clearValue  = function(e) { this.value = onlyDigits(this.value) };
-      var selectValue = function(e) { this.select() };
-      
-      var inputs = document.getElementsByTagName('input')
-      for(var i=0;i<inputs.length;i++) {
-        inputs[i].addEventListener('input',  clearValue)
-        inputs[i].addEventListener('change', clearValue)
-        inputs[i].addEventListener('click',  selectValue)
-      }
-      
-      document.forms[0].addEventListener('submit', function(){
-        this.action = '/' + document.getElementById('recipe_id').value + '.pkpass'
-      })
-      
-      document.getElementById('try').addEventListener('click', function(e) {
-        if (e.target && e.target.tagName == "A") {
-          e.preventDefault()
-          document.getElementById('recipe_id').value = onlyDigits(e.target.href)
+      var CC = {
+        strip: function(str) { 
+          return str.replace(/\D/g,'')
+        },
+        redirect: function(e){
+          this.action = '/' + this['id'].value + '.pkpass'
+        },
+        select: function(e) {
+          if (e.target.tagName=='INPUT') e.target.select()
+        },
+        clear: function(e){
+          if (e.target.tagName=='INPUT') e.target.value = CC.strip(e.target.value)
+        },
+        copy: function(e) {
+          if (e.target && e.target.tagName=='A') {
+            document.forms[0]['id'].value = CC.strip(e.target.href)
+            e.preventDefault()
+          }
         }
-      })
+      }
+      var form = document.forms[0]
+      form.addEventListener('input',  CC.clear)
+      form.addEventListener('change', CC.clear)
+      form.addEventListener('submit', CC.redirect)
+      form.addEventListener('click',  CC.select)
+      document.getElementById('try').addEventListener('click', CC.copy)
   </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-48472803-1', 'chefcards.herokuapp.com');
     ga('send', 'pageview');
   </script>
