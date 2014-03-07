@@ -6,6 +6,7 @@ else
   Dotenv.load
 end
 
+require 'ping-pong'
 use Ping::Pong
 
 require_relative 'lib/server'
