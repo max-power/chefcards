@@ -6,5 +6,7 @@ else
   Dotenv.load
 end
 
+use Ping::Pong
+
 require_relative 'lib/server'
 run Chefcard::Server

@@ -1,16 +1,12 @@
-GIT
-  remote: git://github.com/max-power/passbook.git
-  revision: 06cc3eeb785708d3782751e25e0206d3b7f9e171
-  specs:
-    power-passbook (0.0.2)
-      rubyzip (~> 1.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
     daemons (1.1.9)
     dotenv (0.10.0)
     eventmachine (1.0.3)
+    ping-pong (0.0.1)
+    power-passbook (0.0.2)
+      rubyzip (~> 1.1)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
@@ -32,7 +28,8 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
-  power-passbook!
+  ping-pong
+  power-passbook
   rack-ssl
   sinatra
   thin
